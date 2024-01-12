@@ -1,0 +1,149 @@
+.hero-section {
+    padding: 105px 0 114px;
+}
+.hero {
+    @include display()
+}
+.hero__content {
+    width: 458px;
+}
+.hero__content-inner{
+    width: 420px;
+    margin-bottom: 18px;
+}
+.hero__title {
+    @include textStyle($fontSize:40px, $fontWeight:700, $lineHeight:60px)
+}
+.hero__text {
+    margin-bottom: 45px;
+    @include textStyle($fontSize:18px, $lineHeight:28px)
+}
+.hero__wrapper {
+    @include display($space:start)
+}
+.hero__link {
+    margin-right: 30.5px;
+    transition: all 0.3s linear;
+    @include link($width:175px, $padding:15px 0 14px);
+    @include textStyle($color: #fff, $fontWeight:700);
+    &:hover{
+        opacity: 0.7;
+    }
+    &:active{
+        @include textStyle($color: #22343D, $fontWeight:700);
+        background-color: transparent;
+        border: 1px solid black;
+    }
+}
+.hero__btn {
+    transition: all 0.4s linear;
+    @include display($space:start);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        opacity: 0.7;
+    }
+    &:active> .hero__btn-text{
+        @include textStyle($color:rgba(0, 128, 0, 0.726), $fontWeight:600);
+    }
+}
+.hero__btn-text {
+    margin-left: 8.5px;
+    transition: all 0.4s linear;
+    @include textStyle($color:#02897A, $fontWeight:600);
+    text-decoration-line: underline;
+}
+@media (max-width: 1000px){
+    .hero__img{
+        width: 500px;
+        height: 457px;
+    }
+}
+@media (max-width: 875px){
+    .hero__img{
+        width: 400px;
+        height: 357px;
+    }
+    .hero__content {
+        max-width: 420px;
+    }
+    .hero__content-inner{
+        max-width: 400px;
+        margin-bottom: 18px;
+    }
+}
+@media (max-width: 850px){
+    .hero {
+        @include display($direction:column-reverse)
+    }
+    .hero__img{
+        width: 100%;
+        height: auto;
+    }
+    .hero__content {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .hero__content-inner{
+        width: 100%;
+        margin-bottom: 18px;
+    }
+}
+@media(max-width:750px){
+    .hero__wrapper {
+        @include display($space:center)
+    }
+}
+@media (max-width:600px){
+    .hero-section{
+        padding-bottom: 115.7px;
+    }
+    .hero__content-inner{
+        margin-bottom: 16px;
+    }
+    .hero__title {
+        @include textStyle($fontSize:36px, $fontWeight:700, $lineHeight:60px)
+    }
+    .hero__text {
+        margin-bottom: 25px;
+    }
+    .hero__wrapper {
+        @include display($space:center)
+    }
+    .hero__link {
+        margin-right: 28px;
+        @include link($width:142px, $padding:15px 0 14px);
+        @include textStyle($color: #fff, $fontWeight:700);
+    }
+    .hero__btn-text {
+        margin-left: 8.7px;
+        @include textStyle($color:#02897A, $fontWeight:600);
+        text-decoration-line: underline;
+    }
+}
+@media (max-width:375px){
+    .hero__link {
+        margin-right: 14px;
+        @include link($width:130px, $padding:15px 0 14px);
+        @include textStyle($color: #fff, $fontSize:14px, $fontWeight:700);
+    }
+    .hero__btn-text {
+        margin-left: 8.7px;
+        @include textStyle($color:#02897A, $fontSize:14px, $fontWeight:600);
+        text-decoration-line: underline;
+    }
+}
+@media (max-width:335px){
+    .hero__link {
+        margin-right: 12px;
+        @include link($width:125px, $padding:15px 0 14px);
+        @include textStyle($color: #fff, $fontSize:14px, $fontWeight:700);
+    }
+    .hero__btn-text {
+        margin-left: 7px;
+        @include textStyle($color:#02897A, $fontSize:14px, $fontWeight:600);
+        text-decoration-line: underline;
+    }
+}

@@ -1,0 +1,101 @@
+.site-header {
+    padding: 19px 0 18px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: #fafafa;
+}
+.header {
+    @include display()
+}
+.header__logo-link {
+    display: inline-block;
+}
+.header__wrapper {
+    @include display($space:start)
+}
+.navbar__list {
+    @include display($space:start)
+}
+.navbar__item + .navbar__item {
+    margin-left: 30px;
+}
+.navbar__link {
+    @include textStyle();
+    transition: all 0.4s linear;
+    &:hover{
+        @include textStyle($fontWeight:600);
+    }
+    &:active{
+        @include textStyle($fontWeight:600, $color: green);
+    }
+}
+.header__demo {
+    margin: 0 24px;
+    @include display($space:start);
+    gap: 24px;
+}
+.header__link-in {
+    transition: all 0.4s linear;
+    @include link ($colorBg:white);
+    border: 1px solid #BCD0E5;
+    &:hover{
+     @include link($colorBg:transparent);
+     @include textStyle($color: green)
+    }
+    &:active{
+        @include link( $colorBg: gold);
+        @include textStyle($color: black, $fontWeight:600);
+       }
+}
+.header__link-up {
+    transition: all 0.4s linear;
+    @include link($width:110px);
+    @include textStyle( $color:#fff);
+    &:hover{
+      opacity: 0.7;
+       }
+       &:active{
+           @include link( $colorBg: red, $width:110px);
+           @include textStyle($color: white, $fontWeight:600);
+          }
+}
+.hambuger__btn{
+    background-color: transparent;
+    border: none;
+    margin-left: 16px;
+    display: none;
+}
+@media (max-width: 1000px){
+   .navbar{
+    display: none;
+   }
+   .hambuger__btn{
+    display: block;
+   }
+}
+@media (max-width: 750px){
+    .navbar{
+     display: none;
+    }
+    .header__demo{
+        display: none;
+    }
+    .hambuger__btn{
+        display: block;
+    }
+ }
+ @media (max-width:650px){
+    .site-header{
+        padding: 17px 0;
+    }
+    .header__logo-img{
+        width: 150px;
+        height: 25px;
+    }
+   .hambuger__img{
+     width: 24px;
+     height: 27px;
+   }
+ }

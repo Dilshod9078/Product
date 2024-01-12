@@ -1,0 +1,106 @@
+.content-section {
+    padding-bottom: 150px;
+}
+.content__title {
+    margin-bottom: 8px;
+    @include textStyle($fontSize:34px, $lineHeight:48px, $fontWeight:700);
+}
+.content__text {
+    margin-bottom: 33px;
+    @include textStyle($lineHeight:26px, $fontWeight:500);
+}
+.content__list {
+    margin-bottom: 64px;
+    @include display();
+}
+.content__item {
+    width: 348px;
+    border-radius: 8px;
+    border: 0.5px solid #DDDDDD;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 0px 2px 8px 5px rgba(0, 0, 0, 0.25);
+    }
+    &:active > .content__bold{
+        @include textStyle($color: #02897A, $fontSize:24px, $lineHeight:40px, $fontWeight:700);
+    }
+}
+.content__item-text {
+    margin: 24px 0 12px 24px;
+    @include textStyle($lineHeight:28px);
+}
+.content__line {
+    @include textStyle($lineHeight:28px, $fontWeight:700);
+}
+.content__bold {
+    width: 294px;
+    margin: 0 0 37px 24px;
+    display: inline-block;
+    @include textStyle($fontSize:24px, $lineHeight:40px, $fontWeight:700);
+}
+.content__wrapper{
+    @include display($space:center)
+}
+@media (max-width:1000px){
+    .content__item{
+        width: 300px;
+    }
+    .content__img{
+        width: 300px;
+    }
+    .content__bold {
+        width: 250px;
+        margin: 0 0 37px 24px;
+        display: inline-block;
+        @include textStyle($fontSize:24px, $lineHeight:40px, $fontWeight:700);
+    }
+}
+@media (max-width:945px){
+    .content__item{
+        width: 100%;
+    }
+    .content__img{
+        width: 100%;
+    }
+    .content__list {
+        @include display($direction:column);
+    }
+    .content__item + .content__item{
+        margin-top: 32px;
+    }
+    .content__bold {
+        width: 100%;
+        height: auto;
+        margin: 0 0 54px 24px;
+        display: inline-block;
+        @include textStyle($fontSize:24px, $lineHeight:40px, $fontWeight:700);
+    }
+    .content__title{
+        text-align: center;
+    }
+    .content__text{
+        text-align: center;
+    }
+    .content__wrapper{
+        display: none;
+    }
+}
+@media (max-width:650px){
+    .content-section{
+        padding-bottom: 61px;
+    }
+    .content__item + .content__item{
+        margin-top: 16px;
+    }
+    .content__text{
+        margin-bottom: 40px;
+    }
+    .content__item-text {
+        margin: 24px 0 12px 0;
+    }
+    .content__bold{
+        margin: 0 0 40px 0;
+    }
+    
+}

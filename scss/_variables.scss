@@ -1,0 +1,25 @@
+
+
+@mixin display ($items:center, $space:space-between, $direction:row){
+    display: flex;
+    align-items: $items;
+    justify-content: $space;
+    flex-direction: $direction;
+}
+
+@mixin textStyle($color:#22343D, $fontSize: 16px, $fontWeight:400, $lineHeight:24px){
+    color: $color;
+    font-size: $fontSize;
+    font-style: normal;
+    font-weight: $fontWeight;
+    line-height: $lineHeight; 
+}
+
+@mixin link($width:102px,$padding: 10px 0 9px, $colorBg: #02897A, $border-radius:4px ){
+    @include textStyle($fontSize:16px, $fontWeight: 600, $lineHeight: 24px, $color: #173A56 );
+    padding: $padding;
+    width: $width;
+    background-color: $colorBg;
+    border-radius: $border-radius;
+    text-align: center;
+}
